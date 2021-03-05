@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>COOKBOOK</title>
+    <link href="https://www.cssscript.com/wp-includes/css/sticky.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/jsonview.css">
+    <script type="text/javascript" src="js/jsonview.js"></script>
+</head>
+<body>
+<h1>Hello Cookbook!!!</h1>
+<div class="root"></div>
+<script type="text/javascript">
+    fetch('http://localhost:8080/recipes')
+        .then((res) => {
+            return res.text();
+        })
+        .then((data) => {
+            jsonView.format(data, '.root');
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+</script>
+</body>
+</html>
